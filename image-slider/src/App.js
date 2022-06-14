@@ -1,7 +1,9 @@
-import logo from './logo.svg';
+import React, {useRef, useState, useEffect} from 'react'
+import { TweenLite, Power3 } from 'gsap';
 import './App.scss';
 import 'reset-css'
-
+import {BsArrowLeftCircleFill} from 'react-icons/bs'
+import {BsArrowRightCircleFill} from 'react-icons/bs'
 const testimonials = [
   {
     name: "Julia Cameron",
@@ -30,7 +32,33 @@ const testimonials = [
 function App() {
   return (
     <div className="testimonial-section">
-      <div className="testimonial-container"></div>
+      <div className="testimonial-container">
+        {/*arrow left */}
+        <div className='arrows left'>
+          <BsArrowLeftCircleFill size={32}/>
+        </div>
+        {/*images*/}
+        <div className='inner'>
+          <div className='t-image'>
+            <ul>
+              <li>
+                <img src={testimonials[0].image} alt={testimonials[0].name}/>
+              </li>
+              <li>
+                <img src={testimonials[1].image} alt={testimonials[1].name}/>
+              </li>
+              <li>
+                <img src={testimonials[2].image} alt={testimonials[2].name}/>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/*arrow right*/}
+        <div className='arrows right'>
+          <BsArrowRightCircleFill size={32}/>
+        </div>
+
+      </div>
     </div>
   );
 }
