@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
-import { TweenLite, Power3 } from 'gsap';
+import {Power3 } from 'gsap';
+import { TweenLite } from 'gsap/gsap-core';
 import './App.scss';
 import 'reset-css'
 import {BsArrowLeftCircleFill} from 'react-icons/bs'
@@ -30,60 +31,76 @@ const testimonials = [
 
 
 function App() {
+  let imageList = useRef(null);
+  let testimonialList = useRef(null)
+  const imageWidth = 340;
+
+  const [state, setState] = useState({
+    isActive1: true,
+    isActive2: false,
+    isActive3: false
+  })
+
+  useEffect(() => {
+    
+  }, [])
+
+  const prevSlide= () => {}
+  const leftArrow = () => {}
+  const nextSlide =() => {}
+  const rightArrow =() => {}
+
   return (
     <div className="testimonial-section">
       <div className="testimonial-container">
-        {/*arrow left */}
-        <div className='arrows left'>
-          <BsArrowLeftCircleFill size={32}/>
+        <div onClick={prevSlide} className="arrows left">
+          <span>
+            <BsArrowLeftCircleFill size={32}/>
+          </span>
         </div>
-        {/*images*/}
-        <div className='inner'>
-          <div className='t-image'>
-            <ul>
-              <li>
-                <img src={testimonials[0].image} alt={testimonials[0].name}/>
+        <div className="inner">
+          <div className="t-image">
+            <ul ref={el => (imageList = el)}>
+              <li className={state.isActive1 ? "active" : ""}>
+                <img src={testimonials[0].image} alt={testimonials[0].name} />
               </li>
-              <li>
-                <img src={testimonials[1].image} alt={testimonials[1].name}/>
+              <li className={state.isActive2 ? "active" : ""}>
+                <img src={testimonials[1].image} alt={testimonials[0].name} />
               </li>
-              <li>
-                <img src={testimonials[2].image} alt={testimonials[2].name}/>
+              <li className={state.isActive3 ? "active" : ""}>
+                <img src={testimonials[2].image} alt={testimonials[0].name} />
               </li>
             </ul>
           </div>
-          {/*content */}
-          <div className='t-content'>
-            <ul>
-              <li>
-                <div className='content-inner'>
-                  <p className='quote'>{testimonials[0].quote}</p>
-                  <p className='name'>{testimonials[0].name}</p>
-                  <p className='title'>{testimonials[0].title}</p>
+          <div className="t-content">
+            <ul ref={el => (testimonialList = el)}>
+              <li className={state.isActive1 ? "active" : ""}>
+                <div className="content-inner">
+                  <p className="quote">{testimonials[0].quote}</p>
+                  <h3 className="name">{testimonials[0].name}</h3>
+                  <h4 className="title">{testimonials[0].title}</h4>
                 </div>
               </li>
-                <li>
-                <div className='content-inner'>
-                  <p className='quote'>{testimonials[1].quote}</p>
-                  <p className='name'>{testimonials[1].name}</p>
-                  <p className='title'>{testimonials[1].title}</p>
+              <li className={state.isActive2 ? "active" : ""}>
+                <div className="content-inner">
+                  <p className="quote">{testimonials[1].quote}</p>
+                  <h3 className="name">{testimonials[1].name}</h3>
+                  <h4 className="title">{testimonials[1].title}</h4>
                 </div>
               </li>
-                <li>
-                <div className='content-inner'>
-                  <p className='quote'>{testimonials[2].quote}</p>
-                  <p className='name'>{testimonials[2].name}</p>
-                  <p className='title'>{testimonials[2].title}</p>
+              <li className={state.isActive3 ? "active" : ""}>
+                <div className="content-inner">
+                  <p className="quote">{testimonials[2].quote}</p>
+                  <h3 className="name">{testimonials[2].name}</h3>
+                  <h4 className="title">{testimonials[2].title}</h4>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-        {/*arrow right*/}
-        <div className='arrows right'>
+        <div className="arrows right" onClick={nextSlide}>
           <BsArrowRightCircleFill size={32}/>
         </div>
-
       </div>
     </div>
   );
