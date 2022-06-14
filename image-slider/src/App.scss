@@ -30,6 +30,7 @@ body {
     height: 600px;
     position: relative;
     .arrows {
+        position: absolute;
         display: flex;
         align-items: center;
         width: 100px;
@@ -101,6 +102,65 @@ body {
                     color: $text;
                     align-items: center;
                     position: absolute;
+                    opacity: 0;
+                    &:nth-child(1){
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            height: 12px;
+                            width: 310px;
+                            background: $text;
+                            opacity: .3;
+                            left: 0;
+                            top: 206px;
+                        }
+                    }
+                    &:nth-child(2){
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            height: 12px;
+                            width: 148px;
+                            background: $text;
+                            opacity: .3;
+                            left: 54px;
+                            top: 126px;
+                        }
+                    }
+                    &:nth-child(3){
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            height: 12px;
+                            width: 280px;
+                            background: $text;
+                            opacity: .3;
+                            left: 144px;
+                            top: 166px;
+                        }
+                    }
+                    .content-inner{
+                        width: 500px;
+                        .quote{
+                            font-size: 26px;
+                            letter-spacing: 0.88px;
+                            line-height: 40px;
+                            font-weight: 700;
+                            margin-bottom: 16px;
+                        }
+                        .name{
+                            font-size: 18px;
+                            letter-spacing: 0.88px;
+                            line-height: 28px;
+                            color: $secondary;
+                        }
+                        .title{
+                            font-size: 18px;
+                            letter-spacing: 0.88px;
+                            line-height: 28px;
+                            color: $secondary;
+                        }
+                    }
                 }
             }
         }

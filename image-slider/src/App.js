@@ -52,6 +52,32 @@ function App() {
               </li>
             </ul>
           </div>
+          {/*content */}
+          <div className='t-content'>
+            <ul>
+              <li>
+                <div className='content-inner'>
+                  <p className='quote'>{testimonials[0].quote}</p>
+                  <p className='name'>{testimonials[0].name}</p>
+                  <p className='title'>{testimonials[0].title}</p>
+                </div>
+              </li>
+                <li>
+                <div className='content-inner'>
+                  <p className='quote'>{testimonials[1].quote}</p>
+                  <p className='name'>{testimonials[1].name}</p>
+                  <p className='title'>{testimonials[1].title}</p>
+                </div>
+              </li>
+                <li>
+                <div className='content-inner'>
+                  <p className='quote'>{testimonials[2].quote}</p>
+                  <p className='name'>{testimonials[2].name}</p>
+                  <p className='title'>{testimonials[2].title}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
         {/*arrow right*/}
         <div className='arrows right'>
