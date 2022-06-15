@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../assets/images/logo-s.png'
+import LogoTitle from '../../assets/images/logo-k.png'
 import Logo from './Logo'
 import './index.scss'
 
 const Home = () => {
-  const [letterClass, setletterClass] = useState('text-animate')
-  const nameArray = ['k', 'o', 'n', 'd', 'w', 'a', 'n', 'i']
+  const [letterClass, setLetterClass] = useState('text-animate')
+  const nameArray = ['o', 'n', 'd', 'w', 'a', 'n', 'i']
   const jobArray =[
     's',
     'o',
@@ -32,7 +32,9 @@ const Home = () => {
   ]
 
   useEffect(()=> {
-    
+    setTimeout(() => {
+      setLetterClass('text-animate-hover')
+    }, 4000)
   },[])
 
 

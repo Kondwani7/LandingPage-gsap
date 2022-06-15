@@ -9,6 +9,8 @@ import {MdEmail} from 'react-icons/md'
 import {FcContacts} from 'react-icons/fc'
 import './index.scss'
 import {Link, NavLink} from 'react-router-dom'
+import {AiOutlineTwitter} from 'react-icons/ai'
+import {GrInstagram} from 'react-icons/gr'
 const Sidebar = () => {
   return (
     <div className='nav-bar'>
@@ -55,20 +57,20 @@ const Sidebar = () => {
         </li>
         <li>
           <a
-            href=''
+            href='https://twitter.com/Kondwani_G'
             target='blank'
             rel='noreferrer'
           >
-            <BsYoutube color="#4d4d4e"/>
+            <AiOutlineTwitter color="#4d4d4e"/>
           </a>
         </li>
         <li>
           <a
-            href=''
+            href='https://www.instagram.com/kondwani_g_ngulube/'
             target='blank'
             rel='noreferrer'
           >
-            <BsSkype color="#4d4d4e"/>
+            <GrInstagram color="#4d4d4e"/>
           </a>
         </li>
       </ul>
