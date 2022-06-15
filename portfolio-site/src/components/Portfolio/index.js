@@ -5,7 +5,7 @@ import portfolioData from '../../data/portfolio.json'
 import './index.scss'
 const Portfolio = () => {
   const [letterClass, setletterClass] = useState('text-animate')
-  console.log(portfolioData)
+  //console.log(portfolioData)
   useEffect(() => {
     const timer = setTimeout(() => {
       setletterClass('text-animate-hover')
@@ -46,16 +46,20 @@ const Portfolio = () => {
     )
   }
   return (
-    <div className='container portfolio-page'>
-      <h1 className='page-title'>
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={"Portfolio".split("")}
-          idx={15}
-        />
-        <div>{renderPortfolio(portfolioData.portfolio)}</div>
-      </h1>
-    </div>
+    <>
+      <div className='container portfolio-page'>
+        <h1 className='page-title'>
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={"Portfolio".split("")}
+            idx={15}
+          />
+          <div>{renderPortfolio(portfolioData.portfolio)}</div>
+        </h1>
+      </div>
+      <Loader type='pacman'/>
+    </>
+    
   )
 }
 
